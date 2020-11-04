@@ -1,0 +1,16 @@
+#app {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#start {
+  overflow: hidden;
+}
+
+#quiz {
+  overflow: hidden;
+}
+
+#finish {
+  overflow: hidden;
+}
