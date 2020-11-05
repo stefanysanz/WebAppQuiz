@@ -1,0 +1,15 @@
+#app {
+    text-align: center;
+}
+
+#start {
+    overflow: hidden;
+}
+
+#quiz {
+    overflow: hidden;
+}
+
+#finish {
+    overflow: hidden;
+}
