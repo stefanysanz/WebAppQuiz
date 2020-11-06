@@ -1,55 +1,35 @@
 let questions = [
-    {
-        question: "What is the HTML tag under which one can write the JavaScript code?",
-        answers: {
-            a: "<javascript>",
-            b: "<scripted>",
-            c: "<script>",
-            d: "<js>"
-        },
-        correct: "c",
-        points: 5
-    },
-    {
-        question: "Which of the following is the correct syntax to display “WebAppQuiz” in an alert box using JavaScript?",
-        answers: {
-            a: "alertbox(“WebAppQuiz”);",
-            b: "msg(“WebAppQuiz”);",
-            c: "msgbox(“WebAppQuiz”);",
-            d: "alert(“WebAppQuiz”);"
-        },
-        correct: "d",
-        points: 5
-    },
-    {
-        question: "What is the correct syntax for referring to an external script called “WebAppQuiz”.js”?",
-        answers: {
-            a: "<script src=”WebAppQuiz.js”>",
-            b: "<script href=”WebAppQuiz.js”>",
-            c: "<script ref=”WebAppQuiz.js”>",
-            d: "<script name=”WebAppQuiz.js”>"
-        },
-        correct: "a",
-        points: 5
-    }
-        question: "What is the correct syntax for referring to an external script called “WebAppQuiz”.js”?",
-        answers: {
-            a: "<script src=”WebAppQuiz.js”>",
-            b: "<script href=”WebAppQuiz.js”>",
-            c: "<script ref=”WebAppQuiz.js”>",
-            d: "<script name=”WebAppQuiz.js”>"
+  {
+    question: "This CSS selector styles a unique element.",
+    answers: {
+      a: "id",
+      b: "class",
+      c: "value",
+      d: "type"
     },
     correct: "a",
     points: 5
-    }
-        question: "What is the correct syntax for referring to an external script called “WebAppQuiz”.js”?",
-        answers: {
-            a: "<script src=”WebAppQuiz.js”>",
-            b: "<script href=”WebAppQuiz.js”>",
-            c: "<script ref=”WebAppQuiz.js”>",
-            d: "<script name=”WebAppQuiz.js”>"
-},
-correct: "a",
+  },
+  {
+    question: "This CSS selector can style multiple elements.",
+    answers: {
+      a: "id",
+      b: "class",
+      c: "value",
+      d: "type"
+    },
+    correct: "b",
     points: 5
-    }
+  },
+  {
+    question: "This javascript method creates an element.",
+    answers: {
+      a: "create()",
+      b: "makeElement()",
+      c: "createElement()",
+      d: "make()"
+    },
+    correct: "c",
+    points: 5
+  }
 ];
