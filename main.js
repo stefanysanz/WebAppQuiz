@@ -16,7 +16,7 @@ function Main() {
     $(start).append(startTitle);
 
     // Create start info
-    let startInfo = document.createElement("p");
+    let startInfo = document.createElement("div");
     $(startInfo).attr("id", "start-info");
     $(startInfo).html("Test your knowledge & take this short 5 question quiz.");
     $(start).append(startInfo);
