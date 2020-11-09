@@ -22,12 +22,12 @@ let questions = [
         points: 5
     },
     {
-        question: "This javascript method creates an element.",
+        question: "ow can you get the total number of arguments passed to a function?",
         answers: {
-            a: "create()",
-            b: "makeElement()",
-            c: "createElement()",
-            d: "make()"
+            a: "Using args.length property",
+            b: "Using arguments.length property",
+            c: "both of the above",
+            d: "none of the above"
         },
         correct: "c",
         points: 5
