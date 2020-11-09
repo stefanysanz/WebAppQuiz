@@ -16,9 +16,9 @@ function Main() {
     $(start).append(startTitle);
 
     // Create start info
-    let startInfo = document.createElement("div");
+    let startInfo = document.createElement("p");
     $(startInfo).attr("id", "start-info");
-    $(startInfo).html("Insert some quiz info.");
+    $(startInfo).html(" Test your knowledge & take this short 5 question quiz. You will have five minutes to complete it & will receive 5 points for every question you answer correctly. Dont forget to sumbit your initials so we can track the highest score. Good Luck! :) ");
     $(start).append(startInfo);
 
     // Create start button
