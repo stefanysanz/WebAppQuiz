@@ -11,25 +11,25 @@ let questions = [
         points: 5
     },
     {
-        question: "This CSS selector can style multiple elements.",
+        question: "Which built-in method returns the calling string value converted to lower case?",
         answers: {
-            a: "id",
-            b: "class",
-            c: "value",
-            d: "type"
+            a: "toLowerCase()",
+            b: "toLower()",
+            c: "changeCase(case)",
+            d: "None of the above"
         },
-        correct: "b",
+        correct: "a",
         points: 5
     },
     {
-        question: "ow can you get the total number of arguments passed to a function?",
+        question: "How can you get the total number of arguments passed to a function?",
         answers: {
             a: "Using args.length property",
             b: "Using arguments.length property",
             c: "both of the above",
             d: "none of the above"
         },
-        correct: "c",
+        correct: "b",
         points: 5
     }
 ];
