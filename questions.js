@@ -8,7 +8,7 @@ let questions = [
             d: "type"
         },
         correct: "a",
-        points: 5
+        points: 1
     },
     {
         question: "Which built-in method returns the calling string value converted to lower case?",
@@ -31,5 +31,27 @@ let questions = [
         },
         correct: "b",
         points: 5
+    },
+    {
+        question: "How do you stop a loop from iterating?",
+        answers: {
+            a: "stop",
+            b: "next",
+            c: "continue",
+            d: "break"
+        },
+        correct: "d",
+        points: 3
+    },
+    {
+        question: "What are the two loop options for javascript?",
+        answers: {
+            a: "for and loop",
+            b: "while and loop",
+            c: "for and while",
+            d: "loop and iterate"
+        },
+        correct: "c",
+        points: 2
     }
 ];

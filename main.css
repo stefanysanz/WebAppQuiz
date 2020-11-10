@@ -2,12 +2,55 @@
     text-align: center;
 }
 
+#high-scores {
+    overflow: hidden;
+}
+
+#high-scores-container {
+    overflow: hidden;
+    margin-top: 10px;
+    height: 0px;
+}
+
 #start {
     overflow: hidden;
+    margin-top: 20px;
+}
+
+#start-title, #finish-title {
+    font-weight: bold;
+}
+
+#start-info, #quiz-question, #finish-score {
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 #quiz {
     overflow: hidden;
+}
+
+#quiz-timer {
+    font-weight: bold;
+}
+
+#answers-container {
+    text-align: center;
+}
+
+#answers-sub-container {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+
+.quiz-btn-container {
+    margin-top: 5px;
+}
+
+.answer {
+    margin-left: 10px;
 }
 
 #finish {

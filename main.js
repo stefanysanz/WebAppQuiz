@@ -4,6 +4,30 @@ function Main() {
     // Get the app div
     let app = $("#app");
 
+    // Create high scores
+    let highScores = document.createElement("div");
+    $(highScores).attr("id", "high-scores");
+    $(app).append(highScores);
+
+    // Create high scores title
+    let highScoresBtn = document.createElement("button");
+    $(highScoresBtn).attr("id", "high-scores-btn");
+    $(highScoresBtn).html("High Scores");
+    $(highScores).append(highScoresBtn);
+
+    // Create high scores container
+    let highScoresContainer = document.createElement("div");
+    $(highScoresContainer).attr("id", "high-scores-container");
+    $(highScores).append(highScoresContainer);
+
+    let highScoresOpen = false;
+
+    function addHighScore(user, score) {
+        let highScore = document.createElement("div");
+        $(highScore).html(user + ": " + score);
+        $(highScoresContainer).append(highScore);
+    }
+
     // Create start
     let start = document.createElement("div");
     $(start).attr("id", "start");
@@ -45,6 +69,14 @@ function Main() {
     $(question).html("Insert your question here");
     $(quiz).append(question);
 
+    let answersContainer = document.createElement("div");
+    $(answersContainer).attr("id", "answers-container");
+    $(quiz).append(answersContainer);
+
+    let answersSubContainer = document.createElement("div");
+    $(answersSubContainer).attr("id", "answers-sub-container");
+    $(quiz).append(answersSubContainer);
+
     // Create answer buttons
     let answerIDs = ["a", "b", "c", "d"];
     let answerBtns = {};
@@ -52,7 +84,7 @@ function Main() {
         let btnID = answerIDs[i];
         let btn = makeAnswerBtn(btnID);
         answerBtns[btnID] = btn;
-        $(quiz).append(btn.container);
+        $(answersSubContainer).append(btn.container);
     }
 
     // Create finish
@@ -93,11 +125,6 @@ function Main() {
     // Create finish button
     let finishBtn = document.createElement("button");
     $(finishBtn).html("Submit");
-    $(finishBtn).click(function() {
-        console.log("Submit: " + finishInitials.value);
-        $(finishInitials).attr("value", "");
-        showStart();
-    });
     $(finishForm).append(finishBtn);
 
     // quizTotalTime is the quiz time in seconds
@@ -113,14 +140,35 @@ function Main() {
     let scoreTotal;
 
     function showStart() {
+        $(highScores).css("height", "auto");
+        highScoresOpen = false;
+        $(highScoresContainer).css("height", "0px");
         $(start).css("height", "auto");
         $(quiz).css("height", "0px");
         $(finish).css("height", "0px");
     }
+
+    $(highScoresBtn).click(function() {
+        if (highScoresOpen) {
+            highScoresOpen = false;
+            $(highScoresContainer).css("height", "0px");
+        } else {
+            highScoresOpen = true;
+            $(highScoresContainer).css("height", "auto");
+        }
+    });
+
+    $(finishBtn).click(function() {
+        console.log("Submit: " + finishInitials.value);
+        addHighScore(finishInitials.value, scoreTotal);
+        $(finishInitials).attr("value", "");
+        showStart();
+    });
     
     $(startBtn).click(function startQuiz() {
         console.log("start quiz");
 
+        $(highScores).css("height", "0px");
         $(start).css("height", "0px");
         $(quiz).css("height", "auto");
 
@@ -164,7 +212,7 @@ function Main() {
         window.clearInterval(quizInt);
         quizInt = setInterval(updateTimer, 1000);
         quizTime = quizTotalTime;
-        $(timer).html("5:00");
+        $(timer).html("Time Remaining: 5:00");
     }
 
     function updateTimer() {
@@ -174,7 +222,7 @@ function Main() {
         if (minutes <=0 && seconds <= 0) {
             showFinish();
         } 
-        $(timer).html(minutes + ":" + seconds);
+        $(timer).html("Time Remaining: " + minutes + ":" + seconds);
     }
 
     function makeAnswerBtn(id) {
@@ -186,6 +234,7 @@ function Main() {
         $(container).append(radioBtn);
 
         var answer = document.createElement("span");
+        $(answer).attr("class", "answer");
         $(answer).html("Answer");
         $(container).append(answer);
 
@@ -196,7 +245,7 @@ function Main() {
                 console.log("score: " + score);
                 console.log("scoreTotal: " + scoreTotal);
                 scoreTotal += score;
-                $(finishScore).html("Score: " + scoreTotal);
+                $(finishScore).html("Your Score: " + scoreTotal);
                 $(answer).css("color", "green");
             } else {
                 $(answer).css("color", "red");
